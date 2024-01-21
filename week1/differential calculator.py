@@ -8,15 +8,15 @@ for idx, j in enumerate(ex):    # 인덱스, 원소
         point = idx
         point += 1
         ans += j
-    if j == 'x':
+    if j == var:
         if int(ex[idx+2]) >= 2:
             if idx - point >= 1:    # 앞에 계수가 있는 경우
                 ans += str(int(ex[point:idx]) * int(ex[idx+2]))
-                ans += 'x^'
+                ans += str(var) + '^'
                 ans += str(int(ex[idx+2])-1)
             else:       # 앞에 계수가 없는 경우
                 ans += str(int(ex[idx+2]))
-                ans += 'x^'
+                ans += str(var) + '^'
                 ans += str(int(ex[idx+2])-1)
         elif int(ex[idx+2]) == 1:
             if idx - point >= 1:    # 앞에 계수가 있는 경우
